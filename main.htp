@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Location-based Cooperative (LoCo)</title>
+    <script src="http://maps.google.com/maps?file=api&v=1&key=ABQIAAAAzMTVq4gbCo1GocsdchJuURSDb1ahwj9GbzZgQpmXvevKDBy7YhSqSzPZW41-m-2T1VwluRtZb5_eFw" type="text/javascript"></script>
+    <script type="text/javascript" src="FCKeditor/fckeditor.js"></script>
+    <script language="javascript" src="calendar1.js"></script>
+    <script language="javascript" src="calendar2.js"></script>
+    <script language="javascript" src="loco.js"></script>
+    <script language="javascript">
+    //<![CDATA[
+
+    // Login user.
+    var login_user = "%user%";
+
+    //]]>
+    </script>
+  </head>
+  <body onload="onLoad()">
+    <table border="1" width=90%>
+      <tr bgcolor="#4682B4">
+        <th colspan=2 align="center"><h2>Location-based Cooperative (LoCo)</h2></th>
+      </tr>
+      <tr>
+        <td>
+          <div id="map" style="width: 500px; height: 520px"></div>
+        </td>
+        <td bgcolor="#DBEAF5" valign="top" align="center">
+          <form name="controls" method="post">
+            <table>
+              <tr>
+                <td align="right" width=25%><label for="user">User:</label></td>
+                <td><input type="text" size="30" name="user" id="user" value="%user%"></td>
+              </tr>
+              <tr>
+                <td align="right"><label for="address">Address:</label></td>
+                <td>
+                  <input type="text" size="30" name="address" id="address">
+                  <input type="button" name="geocode" value="Go" onclick="goAddress()">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <label for="content">Marker content:</label>
+                  <textarea name="content" rows="5" cols="40" id="content"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td align="right"><label for="start_date">Start date:</label></td>
+                <td><input type="text" name="start_date" value="" id="start_date">
+                <a href="javascript:start_cal.popup();"><img src="cal.gif" width="16" height="16" border="0" alt="Click to select start date"></a></td>
+              </tr>
+              <tr>
+                <td align="right"><label for="end_date">End date:</label></td>
+                <td><input type="text" name="end_date" value="" id="end_date">
+                <a href="javascript:end_cal.popup();"><img src="cal.gif" width="16" height="16" border="0" alt="Click to select end date"></a></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <table>
+                    <tr>
+                      <td>Marker mode:</td>
+                      <td><input name="mode" type="radio" value="view" onclick="setMode(1)" checked>View all</td>
+                      <td><input name="mode" type="radio" value="filter" onclick="setMode(2)">View filtered</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td><input name="mode" type="radio" value="add" onclick="setMode(3)">Add</td>
+                      <td><input name="mode" type="radio" value="remove" onclick="setMode(4)">Remove</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2"><label for="notice">Notice:</label></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <textarea name="notice" rows="1" cols="40" id="notice" value="%message%" readonly></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input name="clear" type="button" value="Reset" onclick="resetControls()">
+                  <input name="filter" type="button" value="Filter" onclick="filterMarkers()">
+                  <input name="refresh" type="button" value="Refresh" onclick="loadMarkers()">
+                  <input name="save" type="button" value="Save" onclick="saveMarkers()">
+                  <input name="help" type="submit" value="Help">
+                  <input name="logout" type="submit" value="Logout">
+                </td>
+              </tr>
+            </table>
+          </form>
+          <script language="JavaScript">
+            var start_cal = new calendar2(document.forms['controls'].elements['start_date']);
+            start_cal.year_scroll = true;
+            start_cal.time_comp = false;
+            var end_cal = new calendar2(document.forms['controls'].elements['end_date']);
+            end_cal.year_scroll = true;
+            end_cal.time_comp = false;
+          </script>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Location-based Cooperative (LoCo) Help</title>
+  </head>
+  <body>
+    <table border="1" width=80%>
+      <tr bgcolor="#4682B4">
+         <th align="center"><h2>Location-based Cooperative (LoCo) Help</h2></th>
+      </tr>
+      <tr bgcolor="#DBEAF5">
+         <td>
+           <p>
+           A user can perform the following actions:<br>
+           <ul>
+             <li>View all available markers</li>
+             <li>Select markers for detailed viewing.</li>
+             <li>Filter and view only markers that match user-specified criteria, such as content string, address, dates, etc.
+                 The filter button selects markers for view filtered mode.</li>
+             <li>Add markers with associated content and properties such as dates at selected points on the map.
+                 These markers are "owned" by the user.</li>
+             <li>Remove markers owned by the user.</li>
+           </ul>
+           <p>
+           <form method="post">
+             <input type="submit" name="back" value="Back">
+           </form>
+         </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+

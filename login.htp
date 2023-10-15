@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Location-based Cooperative (LoCo) Login</title>
+  </head>
+  <body>
+    <table border="1" width=80%>
+      <tr bgcolor="#4682B4">
+         <th align="center" colspan=2><h2>Location-based Cooperative (LoCo) Login</h2></th>
+      </tr>
+      <tr bgcolor="#DBEAF5">
+         <td valign="top" width=50%>
+             <p>
+             LoCo (Location-based Cooperative) allows people to cooperate on activities
+             that are organized around locales. It allows users to add content-associated
+             markers to a map and to view and search for markers based on selected criteria,
+             such as content, dates, and user names and addresses.
+         </td>
+         <td align="center">
+           <form method="post">
+             <p>
+             Please login
+             <br><font color="red">%message%</font>
+             <table>
+               <tr>
+               <td align="right"><label for="user">User name:</label></td><td><input type="text" name="user" id="user"></td>
+               </tr>
+               <tr>
+               <td align="right"><label for="password">Password:</label></td><td><input type="password" name="password" id="password"></td>
+               </tr>
+               <tr>
+               <p>
+               <td>
+               <input type="submit" name="login" value="Login">
+               </td>
+               <td>
+               <input type="submit" name="register" value="Register">
+               </td>
+               </tr>
+            </table>
+           </form>
+         </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
